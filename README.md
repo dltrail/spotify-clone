@@ -1,7 +1,7 @@
 # Spotify Clone App
 
 Toolbox
-  React
-  TailwindCSS
-  Redux
-  RapidAPI
+  - React
+  - TailwindCSS
+  - Redux
+  - RapidAPI
