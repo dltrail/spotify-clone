@@ -1,6 +1,6 @@
 # Spotify Clone App
 
-Toolbox
+🔧 Toolbox
   - React
   - TailwindCSS
   - Redux
