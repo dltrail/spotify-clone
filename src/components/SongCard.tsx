@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Images, Track } from "../../types"
 
 type Props = {
@@ -9,8 +10,8 @@ function SongCard({ track }: Props) {
     return (
         <div className="flex flex-col w-[220px] text-left p-4 h-auto cursor-pointer bg-opacity-80 bg-white/5 backdrop-blur-sm text-lightest-blue rounded-lg text-sm">
             <img src={images.coverart} className="object-contain w-full mb-4" width="100%" height="auto" />
-            <p className="text-wrap capitalize font-bold text-sm truncate">{title}</p>
-            <p className="capitalize font-extralight text-xs">{title}</p>
+            <Link className="text-wrap capitalize font-bold text-sm truncate" to={`/songs/${track?.key}`}>{title}</Link>
+            <Link className="capitalize font-extralight text-xs" to={track.artists ? `/artists/${track?.artists[0]?.adamid}` : '/top-artists'}>{title}</Link>
         </div >
     )
 }
