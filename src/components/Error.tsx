@@ -5,7 +5,7 @@ type Props = {
 
 function Error({ title }: Props) {
     return (
-        <div><h2>{title}</h2></div>
+        <h2 className="text-lightest-blue">{title}</h2>
     )
 }
 
