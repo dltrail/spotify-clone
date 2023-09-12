@@ -9,17 +9,17 @@ import Error from "../components/Error"
 type Props = {}
 
 function Discover({ }: Props) {
-    const [genre, setGenre] = useState("Pop")
+    const [genre, setGenre] = useState("REGGAE_DANCE_HALL")
 
     const { data, error, isFetching } = useGetTopChartsQuery(genre)
-    console.log(data)
+    console.log(genres)
 
     if (isFetching) {
         return <Loading title="loading songs" />
     }
 
     if (error) {
-        return <Error title="Sorry, we're having issues loading contnent right now" />
+        return <Error title="Sorry, we're having issues loading content right now" />
     }
 
     return (
