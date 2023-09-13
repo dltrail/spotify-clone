@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 type Props = {
     track: Track;
     isPlaying: boolean
-    currentIndex?: 0,
+    currentIndex?: number,
     activeSong: { title: '' },
     genreListId?: ""
     index: string
