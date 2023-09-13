@@ -16,18 +16,13 @@ type Props = {
 
 function PlayPause({ isPlaying, activeSong, track, handlePause, handlePlay }: Props) {
     return (
-        <div>
-            {/* {isPlaying && activeSong.title === track.title ? (
-                <FaPauseCircle size={35} className="bg-gray-500" onClick={handlePause} />) :
+        <div className="flex">
+            {isPlaying && activeSong.title === track.title ? (
+                <FaPauseCircle size={25} className="text-gray-500" onClick={handlePause} />) :
                 (
-                    <FaPlayCircle size={35} className="text-gray-500" onClick={handlePlay} />
+                    <FaPlayCircle size={25} className="text-gray-500" onClick={handlePlay} />
                 )
-            } */}
-
-            <FaPauseCircle size={35} className="bg-gray-500" onClick={handlePause} />
-
-            <FaPlayCircle size={35} className="text-gray-500" onClick={handlePlay} />
-
+            }
         </div>
     )
 }
