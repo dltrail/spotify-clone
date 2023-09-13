@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { Images, Track } from "../../types";
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 type Props = {
     track: Track;
@@ -12,27 +13,27 @@ type Props = {
     genreListId?: ""
     index: string
     data: {}
+    isActive: boolean
 };
 
-function SongCard({ track, activeSong, isPlaying, data, index }: Props) {
+function SongCard({ track, isPlaying, isActive, data, index, activeSong }: Props) {
+    console.log(isPlaying)
     const dispatch = useDispatch()
 
     const { title, images, } = track;
+    const handlePlayClick = () => {
 
+        dispatch(playPause(true))
+        dispatch(setActiveSong({ track, data, index }))
+    };
     const handlePauseClick = () => {
         dispatch(playPause(false))
-        console.log('paused')
     };
 
-    const handlePlayClick = () => {
-        dispatch(setActiveSong({ track, data, index }))
-        dispatch(playPause(true))
-        console.log('Play')
 
-    };
     return (
-        <div className="flex flex-col w-[250px] text-left p-4 h-auto cursor-pointer bg-opacity-80 bg-white/5 backdrop-blur-sm text-lightest-blue rounded-lg text-sm">
-            <div className="relative w-full h-56 group">
+        <div className="flex flex-col w-[250px] text-left p-4 h-auto cursor-pointer bg-opacity-80 bg-white/5 backdrop-blur-sm text-lightest-blue rounded-lg text-sm group">
+            <div className="relative w-full h-56">
                 <img
                     src={images.coverart}
                     className="object-contain w-full mb-4"
@@ -41,8 +42,8 @@ function SongCard({ track, activeSong, isPlaying, data, index }: Props) {
                     alt="song-image"
                 />
                 <div
-                    className={`absolute group-hover:flex inset-0 justify-center items-center bg-black bg-opacity-50 ${activeSong?.title === track.title
-                        ? "flex bg-black bg-opacity-70"
+                    className={`absolute group-hover:flex -bottom-8 right-0 justify-center items-center bg-opacity-50 ${activeSong?.title === track.title
+                        ? "flex"
                         : "hidden"
                         }`}
                 >
@@ -53,7 +54,7 @@ function SongCard({ track, activeSong, isPlaying, data, index }: Props) {
                         activeSong={activeSong}
                         track={track}
                         currentIndex={0}
-                        isActive={false}
+                        isActive={isActive}
                         genreListId={""} />
                 </div>
             </div>
