@@ -18,7 +18,8 @@ function Discover({ }: Props) {
 
     const { data, error, isFetching } = useGetTopChartsQuery(genre)
 
-    const { activeSong, isPlaying } = useSelector((state: { player: { activeSong: any } }) => state.player.activeSong || {})
+    const { activeSong, isPlaying, isActive } = useSelector((state: any) => state.player || {})
+
 
     if (isFetching) {
         return <Loading title="loading songs" />
@@ -41,7 +42,7 @@ function Discover({ }: Props) {
 
             <div className=" flex flex-wrap justify-start md:justify-center gap-8">
                 {data?.tracks.map((track: Track, i: string) => (
-                    <SongCard key={track.key} index={i} track={track} isPlaying={isPlaying} activeSong={activeSong} data={data} />
+                    <SongCard key={track.key} index={i} track={track} isPlaying={isPlaying} activeSong={activeSong} data={data} isActive={isActive} />
                 ))
                 }
             </div>
