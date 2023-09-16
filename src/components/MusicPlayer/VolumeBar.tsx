@@ -1,4 +1,3 @@
-import React from 'react';
 import { BsFillVolumeUpFill, BsVolumeDownFill, BsFillVolumeMuteFill } from 'react-icons/bs';
 type Props = {
   value: number, min: string, max: string, onChange: (event: any) => void, setVolume: (x: number) => void
