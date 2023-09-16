@@ -10,4 +10,5 @@ body {
     rgba(3, 57, 108, 0.9484536082474226) 100%
   );
   letter-spacing: 1px;
+  background-repeat: no-repeat;
 }
