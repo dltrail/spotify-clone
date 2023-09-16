@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
-  nextSong,
-  prevSong,
+  // nextSong,
+  // prevSong,
   playPause,
 } from "../../redux/features/playerSlice";
 import Controls from "./Controls";
@@ -38,23 +38,26 @@ const MusicPlayer = () => {
   };
 
   const handleNextSong = () => {
-    dispatch(playPause(false));
+    // dispatch(playPause(false));
 
-    if (!shuffle) {
-      dispatch(nextSong((currentIndex + 1) % currentSongs.length));
-    } else {
-      dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
-    }
+    // if (!shuffle) {
+    //   dispatch(nextSong((currentIndex + 1) % currentSongs.length));
+    // } else {
+    //   dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
+    // }
+    console.log("Implement function")
   };
 
   const handlePrevSong = () => {
-    if (currentIndex === 0) {
-      dispatch(prevSong(currentSongs.length - 1));
-    } else if (shuffle) {
-      dispatch(prevSong(Math.floor(Math.random() * currentSongs.length)));
-    } else {
-      dispatch(prevSong(currentIndex - 1));
-    }
+    // if (currentIndex === 0) {
+    //   dispatch(prevSong(currentSongs.length - 1));
+    // } else if (shuffle) {
+    //   dispatch(prevSong(Math.floor(Math.random() * currentSongs.length)));
+    // } else {
+    //   dispatch(prevSong(currentIndex - 1));
+    // }
+    console.log("Implement function")
+
   };
 
   return (

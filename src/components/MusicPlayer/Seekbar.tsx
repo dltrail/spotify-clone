@@ -1,4 +1,3 @@
-import React from 'react';
 
 type Props = {
   value: number, min: number, max: number, onInput: any, setSeekTime: (x: number) => void, appTime: any
