@@ -18,7 +18,7 @@ type Props = {
 function SongCard({ track, isPlaying, isActive, data, index, activeSong }: Props) {
     const dispatch = useDispatch()
 
-    const { title, images, } = track;
+    const { title, images, subtitle } = track;
     const handlePlayClick = () => {
 
         dispatch(playPause(true))
@@ -70,7 +70,7 @@ function SongCard({ track, isPlaying, isActive, data, index, activeSong }: Props
                         : "/top-artists"
                 }
             >
-                {title}
+                {subtitle}
             </Link>
         </div>
     );
