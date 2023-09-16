@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 body {
-  background: rgb(1, 1, 67);
-  background: linear-gradient(
-    115deg,
-    rgba(1, 1, 67, 1) 0%,
-    rgba(3, 57, 108, 0.9484536082474226) 100%
+  background: rgb(1, 1, 67, 1);
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(3, 57, 108, 0.9484536082474226),
+    rgb(119, 5, 5)
   );
   letter-spacing: 1px;
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
 }
