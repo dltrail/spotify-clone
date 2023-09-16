@@ -16,7 +16,6 @@ type Props = {
 };
 
 function SongCard({ track, isPlaying, isActive, data, index, activeSong }: Props) {
-    console.log(isPlaying)
     const dispatch = useDispatch()
 
     const { title, images, } = track;
