@@ -62,8 +62,8 @@ const playerSlice = createSlice({
 
 export const {
   setActiveSong,
-  nextSong,
-  prevSong,
+  // nextSong,
+  // prevSong,
   playPause,
   selectGenreListId,
 } = playerSlice.actions;

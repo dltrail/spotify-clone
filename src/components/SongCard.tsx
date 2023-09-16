@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { Images, Track } from "../../types";
+import { Track } from "../../types";
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 type Props = {
     track: Track;
